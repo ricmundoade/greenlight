@@ -26,6 +26,16 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+  
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Build & push Docker image
+      with:
+        image: rmundome/goapp1
+        tags: v1, latest
+        registry: docker.io
+        dockerfile: Dockerfile.ci
+        username: ${{ secrets.DK_USER }}
+        password: ${{ secrets.DK_PWD }}
 
 
 
