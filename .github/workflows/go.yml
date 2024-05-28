@@ -33,19 +33,14 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
       
-    - name: Login to Docker Hub
-      uses: docker/login-action@v3
+    - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Build & push Docker image
       with:
-        username: ${{ secrets.DK_USER }}
-        password: ${{ secrets.DK_PWD }}
-      
-    - name: Build and push
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        push: true
-        tags: rmundome/goapp1:latest
-      
+       image: repo/image
+       tags: v1, latest
+       registry: registry-url.io        
+       username: ${{ secrets.DK_USER }}
+       password: ${{ secrets.DK_PWD }}
  
 
 
