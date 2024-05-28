@@ -38,7 +38,7 @@ jobs:
       with:
        image: repo/image
        tags: v1, latest
-       registry: registry-url.io        
+       registry: docker.io        
        username: ${{ secrets.DK_USER }}
        password: ${{ secrets.DK_PWD }}
  
