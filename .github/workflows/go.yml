@@ -32,8 +32,7 @@ jobs:
       with:
         image: rmundome/goapp1
         tags: v1, latest
-        registry: docker.io
-        dockerfile: Dockerfile.ci
+        registry: docker.io 
         username: ${{ secrets.DK_USER }}
         password: ${{ secrets.DK_PWD }}
 
