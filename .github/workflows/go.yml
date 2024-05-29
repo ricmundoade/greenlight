@@ -28,6 +28,7 @@ jobs:
       run: go test -v ./...
   
     - uses: mr-smithers-excellent/docker-build-push@v6
+      name: Build and Push
       with:
         image: rmundome/goapp1
         registry: docker.io
